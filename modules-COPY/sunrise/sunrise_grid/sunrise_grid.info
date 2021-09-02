@@ -1,0 +1,10 @@
+name = Sunrise Bootstrap Grid
+description = "Views plugin for displaying views content in a responsive grid."
+core = 7.x
+package = Sunrise
+
+dependencies[] = views
+dependencies[] = jquery_update
+
+files[] = sunrise_grid.theme.inc
+files[] = sunrise_grid_plugin_style_grid.inc

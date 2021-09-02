@@ -1,0 +1,106 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function price_range_block_info() {
+	$blocks = array();
+	$blocks['price_range_navigation_block'] = array(
+    	'info' => 'Price Range Navigation',
+    	'cache' => DRUPAL_NO_CACHE,
+  	);
+  	return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function price_range_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'price_range_navigation_block':
+      $block['subject'] = 'Price Range';
+      $ranges = array(
+        array(
+          'label' => 'Under Rs.25.00',
+          'min' => 0.00,
+          'max' => 25.00,
+        ),
+        array(
+          'label' => 'Rs.25.00 - Rs.50.00',
+          'min' => 25.00,
+          'max' => 50.00,
+        ),
+        array(
+          'label' => 'Rs.50.00 - Rs.75.00',
+          'min' => 50.00,
+          'max' => 75.00,
+        ),
+        array(
+          'label' => 'Rs.75.00 - Rs.100.00',
+          'min' => 75.00,
+          'max' => 100.00,
+        ),
+        array(
+          'label' => 'Over Rs.100.00',
+          'min' => 100.00,
+          'max' => null,
+        ),
+      );
+      $items = array();
+      foreach ($ranges as $range) {
+        $items[] = l(
+          $range['label'],
+          'product/price-by', /* replace this with the path to your view's page display */
+          array('query' => array(
+            'pmin' => $range['min'],
+            'pmax' => $range['max'],
+          ))
+        );
+      }
+      $block['content'] = theme('item_list', array('items' => $items, 'attributes' => array('class' => 'price-range'))); 
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function price_range_views_api() {
+  return array(
+    'api' => 3, 
+    'path' => drupal_get_path('module', 'my_module'), 
+    'template path' => drupal_get_path('module', 'price_range'),
+  );
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function price_range_views_query_alter(&$view, &$query) {
+  // Replace this view name and display name with your view's values.
+  if ($view->name == 'product_by_price' && $view->current_display == 'page') {
+      $min = null;
+      $max = null;
+      if (isset($query->where[1]['conditions'][2]['value'])) {
+        $min = $query->where[1]['conditions'][2]['value'];
+      }
+      if (isset($query->where[1]['conditions'][3]['value'])) {
+        $max = $query->where[1]['conditions'][3]['value'];
+      }
+      if ($min && $max) {
+        $min = commerce_currency_format($min/100, 'inr') . '.00';
+        $max = commerce_currency_format($max/100, 'inr') . '.00';
+        $view->build_info['title'] = "Products between $min and $max";
+      }
+      else if ($min) {
+        $min = commerce_currency_format($min/100, 'inr') . '.00';
+        $view->build_info['title'] = "Products over $min";
+      }
+      else if ($max) {
+        $max = commerce_currency_format($max/100, 'inr') . '.00';
+        $view->build_info['title'] = "Products under $max";
+      }
+  }
+}

@@ -1,0 +1,4 @@
+name = Sunrise Commerce Price Range
+description = Commerce Product Price Range
+core = 7.x
+package = Sunrise

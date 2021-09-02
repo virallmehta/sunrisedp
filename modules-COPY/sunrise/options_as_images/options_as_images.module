@@ -1,0 +1,51 @@
+<?php
+/**
+ * Implements hook_form_alter().
+ *
+ *
+ */
+function options_as_images_form_alter(&$form, &$form_state, $form_id) {
+    if (strstr($form_id, 'commerce_cart_add_to_cart_form_')) {
+        if (isset($form['product_id']['#options'])) {
+            $options = $form['product_id']['#options'];
+            $op = array();
+            foreach ($options as $key => $value) { 
+                $op[] = $key;
+            } 
+            $prod_objects = commerce_product_load_multiple($op, $conditions = array(), $reset = FALSE);
+            if ( module_exists('commerce_multicurrency') ) {
+                $target_currency_code = commerce_multicurrency_get_user_currency_code();
+                foreach ($prod_objects as $key => $value) {
+                    $items = field_get_items( 'commerce_product', $value, 'field_type_image' );
+                    $item = reset($items);
+                    //$title = field_get_items( 'commerce_product', $value, 'title' );
+                    $uri = $item['uri'];
+                    $title = $value->title;
+                    $cps = field_get_items( 'commerce_product', $value, 'commerce_price' );
+                    $cp = reset($cps);
+                    $cur = commerce_multicurrency_conversion($cp['amount'], $cp['currency_code'], $target_currency_code);
+                    $currency = commerce_currency_format($cur, $target_currency_code);
+                    $variables['path'] = file_create_url( image_style_path('thumbnail', $uri));
+                    $variables['attributes'] = '';
+                    $form['product_id']['#options'][$key] = $title . theme_image($variables) . $currency ;
+                } 
+            } else { 
+                foreach ($prod_objects as $key => $value) {
+                    $items =  field_get_items( 'commerce_product', $value, 'field_comerce_images' );
+                    $item = reset($items);
+                    //$title = field_get_items( 'commerce_product', $value, 'title' );
+                    $uri = $item['uri'];
+                    $title = $value->title;
+                    $cps = field_get_items( 'commerce_product', $value, 'commerce_price' );
+                    $cp = reset($cps);
+                    $currency = commerce_currency_format($cp['amount'], $cp['currency_code']);
+                    $variables['path'] = file_create_url( image_style_path('thumbnail', $uri));
+                    $variables['attributes'] = '';
+                    $form['product_id']['#options'][$key] = theme_image($variables);
+                } 
+            } 
+            $form['submit']['#value'] = t('Add to Cart'); 
+            $form['product_id']['#type'] = 'radios'; 
+        }
+    }
+}

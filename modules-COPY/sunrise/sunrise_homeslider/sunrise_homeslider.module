@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function sunrise_homeslider_block_info() {
+	$blocks = array();
+	$blocks['sunrise_homeslider'] = array(
+		'info' => t('sunrise_homeslider'),
+	);
+
+	return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function sunrise_homeslider_block_view($delta = '') {
+	
+	$block = array();
+	
+	switch ($delta) {
+		case 'sunrise_homeslider':
+			$block['subject'] = t('Home Slider');
+			$block['content'] = _sunrise_homeslider_block_content();
+			break;
+	}
+	
+	return $block;
+}
+
+function _sunrise_homeslider_block_content() {
+
+	$slider_path = drupal_get_path('module', 'sunrise_homeslider');
+	drupal_add_css($slider_path .'/css/fractionslider.css');
+	drupal_add_css($slider_path . '/css/homeslider.css');
+
+	drupal_add_js($slider_path . '/js/jquery.fractionslider.min.js', array('scope' => 'footer', 'weight' => 3));
+
+	drupal_add_js($slider_path . '/js/sunrise_homeslider.js', array('scope' => 'footer', 'weight' => 4));	
+
+	$html =	'<div class="slider">
+					<div class="fs_loader"></div>
+					<div class="slide">
+						
+						<img src="'. $slider_path . '/images/drupal-man.png" width="529" height="331" data-position="30,30" data-in="top" data-step="1" data-out="top" ease-in="easeOutBounce" data-delay="500" />
+						<h1 class="claim light-green" data-position="10,430" data-in="top" data-step="2" data-out="top" data-ease-in="easeOutBounce" data-delay="1000">Content Management System</h1>
+						<h2 data-position="50, 500" data-in="left" data-step="3" data-out="none" data-delay="1500">Drupal Development</h2>
+						<p class="bullet" data-position="90,500" data-in="bottom" data-step="4" data-delay="500" data-out="none">Delivers High Performance</p>
+						<p class="bullet" data-position="120,500" data-in="bottom" data-step="5" data-delay="500" data-out="none">Simple to use</p>
+						<p class="bullet" data-position="150,500" data-in="bottom" data-step="6" data-delay="500" data-out="none">Provides high value solution for Internet Presence</p>
+						<p class="bullet" data-position="180,500" data-in="bottom" data-step="7" data-delay="500" data-out="none">Free access to future upgrades & security patches</p>
+						<p class="bullet" data-position="210,500" data-in="bottom" data-step="8" data-delay="500" data-out="none">High cost effective performance</p>
+						<p class="bullet" data-position="240,500" data-in="bottom" data-step="9" data-delay="500" data-out="none">Easy Modification</p>
+						<p class="bullet" data-position="270,500" data-in="bottom" data-step="10" data-delay="500" data-out="none">SEO Friendly</p>
+
+					</div>
+					<div class="slide" data-in="slideLeft">
+						<img src="'. $slider_path . '/images/commerce.png" width="183" height="175" data-position="50,100" data-in="top" data-step="1" data-out="top" ease-in="easeOutBounce" data-delay="500" />
+						<img src="'. $slider_path . '/images/drupal-4.png" width="79" height="90" data-position="250,300" data-in="top" data-step="2" data-out="top" ease-in="easeOutBounce" data-delay="1000" />
+										
+						<img src="'. $slider_path . '/images/quick.png" width="434" height="39" data-position="50,450" data-in="top" data-step="3" data-out="top" ease-in="easeOutBounce" data-delay="1300" />
+						<img src="'. $slider_path . '/images/totalsolution.png" width="291" height="43" data-position="120,530" data-in="bottom" data-step="4" data-out="right" ease-in="easeOutBounce" data-delay="1600" />	
+						<img src="'. $slider_path . '/images/dynamic.png" width="387" height="67" data-position="200,580" data-in="bottom" data-step="5" data-out="bottom" ease-in="easeOutBounce" data-delay="1600" />
+					</div>					
+					
+					<div class="slide" data-in="slideLeft">
+						<img src="'. $slider_path . '/images/chart.png" width="349" height="216" data-position="50,50" data-in="top" data-step="1" data-out="top" data-delay="500" />
+						<img src="'. $slider_path . '/images/flex.png" width="317" height="190" data-position="175,450" data-in="bottom" data-step="2" data-out="right" data-delay="1000" />
+										
+						<img src="'. $slider_path . '/images/support.png" width="267" height="308" data-position="50,775" data-in="top" data-step="3" data-out="bottom" data-delay="1300" />
+					</div>
+
+			</div>';
+
+	$output = $html;
+
+	return $output;
+}

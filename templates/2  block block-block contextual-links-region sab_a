@@ -1,0 +1,403 @@
+Phone: 
+
+
+
+
+[column cols="3" begin="0" end="1"]coll1111[/column][column cols="3" begin="0" end="1"]coll2[/column][column cols="3" begin="0" end="1"]col33333[/column] [column cols="3" begin="0" end="1"]col4444[/column]
+
+[column cols="3" begin="1" end="0"]coll1111[/column][column cols="3" begin="0" end="0"]coll2[/column][column cols="3" begin="0" end="0"]col33333[/column] [column cols="3" begin="1" end="1"]col4444[/column]
+
+
+
+[column cols="3" begin="0" end="1"]<img alt="" class="attr__format__media_original img__fid__3 img__view_mode__media_original media-image" src="http://missbeautiful/sites/default/files/howit1.png" style="height:206px; width:195px" /><p>Choose your services
+from our menu</p>[/column][column cols="3" begin="0" end="1"]<img alt="" class="attr__format__media_large img__fid__4 img__view_mode__media_large media-image" src="http://missbeautiful/sites/default/files/styles/large/public/howit2.png?itok=j6WTlIyw" style="height:206px; width:195px" /><p>Book through our 
+website / call us on 8433688292</p>[/column][column cols="3" begin="0" end="1"]<img alt="" class="attr__format__media_large img__fid__5 img__view_mode__media_large media-image" src="http://missbeautiful/sites/default/files/styles/large/public/howit3.png?itok=2Rdndgfd" style="height:206px; width:195px" /><p>Get an Appointment</p>[/column] [column cols="3" begin="0" end="1"]<img alt="" class="attr__format__media_original img__fid__6 img__view_mode__media_original media-image" src="http://missbeautiful/sites/default/files/howit4.png" style="height:206px; width:195px" /><p>Sit back, relax & 
+wait to get pampered</p>[/column]</p>
+
+
+[column cols="4" begin="0" end="1"]<a href="#"><img alt="" class="attr__format__media_original img__fid__7 img__view_mode__media_original media-image" src="http://missbeautiful/sites/default/files/hair.png" style="height:195px; width:195px" /><p>Hair</p></a>[/column][column cols="4" begin="0" end="1"]<a href="#"><img alt="" class="attr__format__media_original img__fid__8 img__view_mode__media_original media-image" src="http://missbeautiful/sites/default/files/face.png" style="height:195px; width:195px" /><p>Face</p></a>[/column][column cols="4" begin="0" end="1"]<a href="#"><img alt="" class="attr__format__media_original img__fid__9 img__view_mode__media_original media-image" src="http://missbeautiful/sites/default/files/tip-toes.png" style="height:195px; width:195px" /><p>Tip &amp; Toes</p></a>[/column][column cols="4" begin="0" end="0"]<a href="#"><img alt="" class="attr__format__media_original img__fid__10 img__view_mode__media_original media-image" src="http://missbeautiful/sites/default/files/body.png" style="height:195px; width:195px" /><p>Body</p></a>[/column][column cols="4" begin="0" end="0"]<a href="#"><img alt="" class="attr__format__media_original img__fid__11 img__view_mode__media_original media-image" src="http://missbeautiful/sites/default/files/wedding.png" style="height:195px; width:195px" /><p>Wedding</p></a>[/column][column cols="4" begin="0" end="1"]<a href="#"><img alt="" class="attr__format__media_original img__fid__12 img__view_mode__media_original media-image" src="http://missbeautiful/sites/default/files/packages.png" style="height:195px; width:195px" /><p>Packages</p></a>[/column]
+
+
+<div class="col-md-6 col-xs-12">
+<div class="table-responsive"> 
+<table border="0" cellpadding="0" cellspacing="0" class="table table-striped" style="width:100%">
+	<tbody>
+		<tr>
+			<td>&nbsp;</td>
+			<td>Price</td>
+		</tr>
+		<tr>
+			<td>Blow Dry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Shoulder Length</td>
+			<td>Rs.400/-</td>
+		</tr>
+		<tr>
+			<td>Below Shoulder (Mid Back)</td>
+			<td>Rs.500/-</td>
+		</tr>
+		<tr>
+			<td>Waist Length</td>
+			<td>Rs.600/-</td>
+		</tr>
+		<tr>
+			<td>Hair Ironing</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Shoulder Length</td>
+			<td>Rs.350/-</td>
+		</tr>
+		<tr>
+			<td>Below Shoulder Length (Mid Back)</td>
+			<td>Rs.450/-</td>
+		</tr>
+		<tr>
+			<td>Waist Length</td>
+			<td>Rs.550/-</td>
+		</tr>
+		<tr>
+			<td>Loreal Hair SPA</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Shoulder Length</td>
+			<td>Rs.500/-</td>
+		</tr>
+		<tr>
+			<td>Below Shoulder Length (Mid Back)</td>
+			<td>Rs.600/-</td>
+		</tr>
+		<tr>
+			<td>Waist Length</td>
+			<td>Rs.700/-</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+<div class="col-md-6 col-xs-12">
+<div class="table-responsive">
+<table border="0" cellpadding="0" cellspacing="0" class="table table-striped" style="width:100%">
+	<tbody>
+		<tr>
+			<td>&nbsp;</td>
+			<td>Price</td>
+		</tr>
+		<tr>
+			<td>Hair Color (Grey Coverage)</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Root Touchup</td>
+			<td>Rs.300/-</td>
+		</tr>
+		<tr>
+			<td>Global Upto Shoulder</td>
+			<td>Rs.500/-</td>
+		</tr>
+		<tr>
+			<td>Global Below Shoulder</td>
+			<td>Rs.700/-</td>
+		</tr>
+		<tr>
+			<td>Loreal Hair Color</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Root Touchup</td>
+			<td>Rs.600/-</td>
+		</tr>
+		<tr>
+			<td>Global Upto Shoulder</td>
+			<td>Rs.1000/-</td>
+		</tr>
+		<tr>
+			<td>Global Below Shoulder (Mid Back)</td>
+			<td>Rs.1500/-</td>
+		</tr>
+		<tr>
+			<td>Wait length</td>
+			<td>Rs.2000/-</td>
+		</tr>
+		<tr>
+			<td>Loreal Inoa</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Root Touchup</td>
+			<td>Rs.800/-</td>
+		</tr>
+		<tr>
+			<td>Global Upto Shoulder</td>
+			<td>Rs.1200/-</td>
+		</tr>
+		<tr>
+			<td>Global Below Shoulder (Mid Back)</td>
+			<td>Rs.1800/-</td>
+		</tr>
+		<tr>
+			<td>Wait length</td>
+			<td>Rs.2200/-</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+
+
+<div class="col-md-6 col-xs-12">
+<div class="table-responsive"> 
+<table border="0" cellpadding="0" cellspacing="0" class="table table-striped" style="width:100%">
+	<tbody>
+		<tr>
+			<td>&nbsp;</td>
+			<td>Price</td>
+		</tr>
+		<tr>
+			<td>Threading</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Eyebrows Threading</td>
+			<td>Rs.30/-</td>
+		</tr>
+		<tr>
+			<td>Upper Lip</td>
+			<td>Rs.20/-</td>
+		</tr>
+		<tr>
+			<td>Chin</td>
+			<td>Rs.20/-</td>
+		</tr>
+		<tr>
+			<td>Forehead</td>
+			<td>Rs.30</td>
+		</tr>
+		<tr>
+			<td>Full Face</td>
+			<td>Rs.120/-</td>
+		</tr>
+		<tr>
+			<td>Clean-Ups</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Regular Clean up (VLCC)</td>
+			<td>Rs.400/-</td>
+		</tr>
+		<tr>
+			<td>Cheryls</td>
+			<td>Rs.500/-</td>
+		</tr>
+		<tr>
+			<td>De-Tan Clean up (VLCC)</td>
+			<td>Rs.600/-</td>
+		</tr>		
+	</tbody>
+</table>
+</div>
+</div>
+<div class="col-md-6 col-xs-12">
+<div class="table-responsive"> 
+<table border="0" cellpadding="0" cellspacing="0" class="table table-striped" style="width:100%">
+	<tbody>
+		<tr>
+			<td>&nbsp;</td>
+			<td>Price</td>
+		</tr>
+		<tr>
+			<td>Bleach</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Upper Lip</td>
+			<td>Rs.60/-</td>
+		</tr>
+		<tr>
+			<td>Full Face &amp; Neck</td>
+			<td>Rs.250/-</td>
+		</tr>
+		<tr>
+			<td>Face, Neck &amp; Blouse Line</td>
+			<td>Rs.300/-</td>
+		</tr>
+		<tr>
+			<td>Underarms</td>
+			<td>Rs.100/-</td>
+		</tr>
+		<tr>
+			<td>Full Hands</td>
+			<td>Rs.250/-</td>
+		</tr>
+		<tr>
+			<td>Half Legs</td>
+			<td>Rs.300/-</td>
+		</tr>
+		<tr>
+			<td>Full Legs</td>
+			<td>Rs.400/-</td>
+		</tr>
+		<tr>
+			<td>Full Back / Full Front</td>
+			<td>Rs.400/-</td>
+		</tr>
+		<tr>
+			<td>Full Body</td>
+			<td>Rs.1000/-</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+
+<div class="service-content">
+<div class="col-md-6 col-xs-12">
+<div class="table-responsive"> 
+<table border="0" cellpadding="0" cellspacing="0" class="table table-striped" style="width:100%">
+	<tbody>
+		<tr>
+			<td>&nbsp;</td>
+			<td>Price</td>
+		</tr>
+		<tr>
+			<td>Waxing</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Half Hand</td>
+			<td>Rs.150/-</td>
+		</tr>
+		<tr>
+			<td>Full Hand</td>
+			<td>Rs.200/-</td>
+		</tr>
+		<tr>
+			<td>Half Leg</td>
+			<td>Rs.200/-</td>
+		</tr>
+		<tr>
+			<td>Full Leg</td>
+			<td>Rs.300/-</td>
+		</tr>
+		<tr>
+			<td>Underarms</td>
+			<td>Rs.50/-</td>
+		</tr>
+		<tr>
+			<td>Only Stomach</td>
+			<td>Rs.200/-</td>
+		</tr>
+		<tr>
+			<td>Full Front &amps; Back</td>
+			<td>Rs.300/-</td>
+		</tr>
+		<tr>
+			<td>Full Body Wax</td>
+			<td>Rs.1200/-</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div class="service-content">
+	<div class="col-md-6 col-xs-12">
+		<div class="table-responsive"> 
+			<table border="0" cellpadding="0" cellspacing="0" class="table table-striped" style="width:100%">
+				<tbody>
+					<tr>
+						<td>&nbsp;</td>
+						<td>Price</td>
+					</tr>
+					<tr>
+						<td>Manicure</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Basic Manicure</td>
+						<td>Rs.250/-</td>
+					</tr>
+					<tr>
+						<td>SPA Manicure</td>
+						<td>Rs.400/-</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="col-md-6 col-xs-12">
+		<div class="table-responsive"> 
+			<table border="0" cellpadding="0" cellspacing="0" class="table table-striped" style="width:100%">
+				<tbody>
+					<tr>
+						<td>&nbsp;</td>
+						<td>Price</td>
+					</tr>
+					<tr>
+						<td>Pedicure</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Basic Manicure</td>
+						<td>Rs.350/-</td>
+					</tr>
+					<tr>
+						<td>SPA Pedicure</td>
+						<td>Rs.500/-</td>
+					</tr>
+					<tr>
+						<td>Nail Cutting & Filing</td>
+						<td>Rs.100/-</td>
+					</tr>
+					<tr>
+						<td>Nail Paint Application Only</td>
+						<td>Rs.50/-</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="service-content">
+	<div class="col-md-6 col-xs-12">
+		<div class="table-responsive"> 
+			<table border="0" cellpadding="0" cellspacing="0" class="table table-striped" style="width:100%">
+				<tbody>
+					<tr>
+						<td>&nbsp;</td>
+						<td>Price</td>
+					</tr>
+					<tr>
+						<td>Bridal</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Bridal Make-Up  & Hair</td>
+						<td>Rs.8000/-</td>
+					</tr>
+					<tr>
+						<td>Siders Make-Up & Hair</td>
+						<td>Rs.3000/-</td>
+					</tr>
+					<tr>
+						<td>Party Make-Up & Hair</td>
+						<td>Rs.100/-</td>
+					</tr>
+					<tr>
+						<td>Saree Drapping</td>
+						<td>Rs.400/-</td>
+					</tr>
+					<tr>
+						<td>Mehendi Application</td>
+						<td>Rs.5000/- to Rs.10000/-</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

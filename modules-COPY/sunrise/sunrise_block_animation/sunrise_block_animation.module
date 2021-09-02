@@ -1,0 +1,262 @@
+<?php
+
+/*
+ * Implement hook_init().
+ */
+function sunrise_block_animation_init() {
+    $module_path = drupal_get_path('module', 'sunrise_block_animation');
+    drupal_add_js($module_path . '/sunrise_block_animation.js');
+}
+
+/*
+ * Implement hook_form_alter()
+ */
+function sunrise_block_animation_form_alter(&$form, &$form_state, $form_id) {
+	if ($form_id == 'block_admin_configure' || $form_id == 'block_add_block_form') {
+		$form['sab_block_settings'] = array(
+        	'#type' => 'fieldset',
+        	'#title' => 'Sunrise Animation Block Settings',
+        	'#weight' => 0,
+        	'#collapsible' => TRUE,
+        	'#collapsed' => TRUE,
+    	);
+
+    	$form['sab_block_settings']['sab_animation'] = array(
+        	'#type' => 'fieldset',
+        	'#title' => 'Block Animation',
+        	'#weight' => 0,
+        	'#collapsible' => TRUE,
+        	'#collapsed' => TRUE,
+    	);
+
+    	$form['sab_block_settings']['sab_animation']['sab_animate'] = array(
+        	'#type' => 'select',
+        	'#title' => t('Appears animate'),
+        	'#options' => _sunrise_block_animations(),
+        	'#default_value' => variable_get($form['module']['#value'] . $form['delta']['#value'] . 'sab_animate'),
+    	);
+
+		$form['sab_block_settings']['sab_animation']['sab_duration'] = array(
+			'#type' => 'textfield',
+			'#title' => t('Duration'),
+			'#size' => 10,
+			'#field_suffix' => 'second(s)',
+			'#default_value' => variable_get($form['module']['#value'] . $form['delta']['#value'] . 'sab_duration', NULL),
+			'#element_validate' => array('_sunrise_block_animation_decimal_validate'),
+		);    	
+
+		$form['sab_block_settings']['sab_custom_style'] = array(
+	        '#type' => 'fieldset',
+	        '#title' => t('Block Custom Style'),
+	        '#weight' => 1,
+	        '#collapsible' => TRUE,
+	        '#collapsed' => TRUE,
+    	);
+
+	    $form['sab_block_settings']['sab_custom_style']['sab_block_padding'] = array(
+	        '#type' => 'textfield',
+	        '#title' => t('Padding'),
+	        '#default_value' => variable_get($form['module']['#value'] . $form['delta']['#value'] . 'sab_block_padding', NULL),
+	    );
+
+	    $form['sab_block_settings']['sab_custom_style']['sab_block_margin'] = array(
+	        '#type' => 'textfield',
+	        '#title' => t('Margin'),
+	        '#default_value' => variable_get($form['module']['#value'] . $form['delta']['#value'] . 'sab_block_margin', NULL),
+	    );
+
+	    $form['sab_block_settings']['sab_custom_style']['sab_block_content_class'] = array(
+	        '#type' => 'textfield',
+	        '#title' => t('Custom block content class'),
+	        '#default_value' => variable_get($form['module']['#value'] . $form['delta']['#value'] . 'sab_block_content_class', NULL),
+	    );
+
+    	$form['#submit'][] = 'sunrise_block_animation_submit';
+	}
+}
+
+/**
+ * Validate Decimal
+ */
+function _sunrise_block_animation_decimal_validate($element, &$form_state, $form) {
+	$value = $element['#value'];
+	if ($value != '' && !is_numeric($value)) {
+		form_error($element,t('This field needs to be a numeric value'));
+	}
+}
+
+/**
+ * Form Submit
+ */
+function sunrise_block_animation_submit($form, $form_state) {
+	$values = $form_state['values'];
+	//drupal_set_message('<pre>' . var_export($values, true) . '</pre>');
+	if ($values['sab_animate']) {
+    	variable_set($values['module'] . $values['delta'] . 'sab_animate', $values['sab_animate']);
+  	} else {
+    	variable_set($values['module'] . $values['delta'] . 'sab_animate', NULL);
+  	}
+
+	if ($values['sab_duration']) {
+    	variable_set($values['module'] . $values['delta'] . 'sab_duration', $values['sab_duration']);
+  	} else {
+    	variable_set($values['module'] . $values['delta'] . 'sab_duration', NULL);
+  	}
+
+	if ($values['sab_block_padding']) {
+	    variable_set($values['module'] . $values['delta'] . 'sab_block_padding', $values['sab_block_padding']);
+	} else {
+	    variable_set($values['module'] . $values['delta'] . 'sab_block_padding', NULL);
+	}
+	
+	if ($values['sab_block_margin']) {
+	    variable_set($values['module'] . $values['delta'] . 'sab_block_margin', $values['sab_block_margin']);
+	} else {
+	    variable_set($values['module'] . $values['delta'] . 'sab_block_margin', NULL);
+	}
+	
+	if ($values['sab_block_content_class']) {
+	    variable_set($values['module'] . $values['delta'] . 'sab_block_content_class', $values['sab_block_content_class']);
+	} else {
+	    variable_set($values['module'] . $values['delta'] . 'sab_block_content_class', NULL);
+	}
+}
+
+function sunrise_block_animation_preprocess_block(&$vars) {
+	//drupal_set_message('<pre>' . var_export($vars[''], true) . '</pre>');
+
+	$vars['content_attributes_array']['class'][] = 'content ';
+  	$block = $vars['elements']['#block'];
+  	$module = $block->module;
+  	$delta = $block->delta;
+  	$animate = variable_get($module . $delta . 'sab_animate', NULL);
+  	$duration = variable_get($module . $delta . 'sab_duration', NULL);
+  	$padding = variable_get($module . $delta . 'sab_block_padding', NULL);
+  	$margin = variable_get($module . $delta . 'sab_block_margin', NULL);
+  	$content_class = variable_get($module . $delta . 'sab_block_content_class', NULL);
+
+	if (!empty($content_class)) {
+    	$vars['content_attributes_array']['class'][] = $content_class;
+  	}
+
+  	if (!empty($animate)) {
+  		$vars['theme_hook_suggestions'][] = 'block__sunrise_block_animation';	
+		$vars['classes_array'][] = 'sab_animate';
+		$vars['attributes_array']['data-animate'] = $animate;
+		$duration_apply = '';
+		if (!empty($duration)) {
+  			$vars['attributes_array']['data-delay'] = $duration;
+  			$duration_apply = $duration . 's';
+  		} else {
+  			$vars['attributes_array']['data-delay'] = 300;
+  			$duration_apply = 300 . 's';
+  		}
+  		$block_id = $vars['block_html_id'];
+		drupal_add_css(
+			"#$block_id .animated {
+				-webkit-animation-duration: $duration_apply;
+				-moz-animation-duration: $duration_apply;
+				-o-animation-duration: $duration_apply;
+				animation-duration: $duration_apply;
+			}",
+			'inline'
+		);
+  	}
+
+  	$styles = array();
+  	if (!empty($padding)) {
+  	 	$styles[] = 'padding: ' . $padding;
+  	}
+
+  	if (!empty($margin)) {
+  		$styles[] = 'margin: ' . $margin;
+  	}
+
+  	if (!empty($styles)) {
+  		$vars['attributes_array']['style'] = implode(";", $styles);
+  	}
+}
+
+/**
+ * Get Animation List
+ */
+function _sunrise_block_animations() {
+	$effects = array(
+		'' => t('None'),
+		'bounce' => t('bounce'),
+		'flash' => t('flash'),
+		'pulse' => t('pulse'),
+		'rubberBand' => t('rubberBand'),
+		'shake' => t('shake'),
+		'swing' => t('swing'),
+		'tada' => t('tada'),
+		'wobble' => t('wobble'),
+		'bounceIn' => t('bounceIn'),
+		'bounceInDown' => t('bounceInDown'),
+		'bounceInLeft' => t('bounceInLeft'),
+		'bounceInRight' => t('bounceInRight'),
+		'bounceInUp' => t('bounceInUp'),
+		'bounceOut' => t('bounceOut'),
+		'bounceOutDown' => t('bounceOutDown'),
+		'bounceOutLeft' => t('bounceOutLeft'),
+		'bounceOutRight' => t('bounceOutRight'),
+		'bounceOutUp' => t('bounceOutUp'),
+		'fadeIn' => t('fadeIn'),
+		'fadeInDown' => t('fadeInDown'),
+		'fadeInDownBig' => t('fadeInDownBig'),
+		'fadeInLeft' => t('fadeInLeft'),
+		'fadeInLeftBig' => t('fadeInLeftBig'),
+		'fadeInRight' => t('fadeInRight'),
+		'fadeInRightBig' => t('fadeInRightBig'),
+		'fadeInUp' => t('fadeInUp'),
+		'fadeInUpBig' => t('fadeInUpBig'),
+		'fadeOut' => t('fadeOut'),
+		'fadeOutDown' => t('fadeOutDown'),
+		'fadeOutDownBig' => t('fadeOutDownBig'),
+		'fadeOutLeft' => t('fadeOutLeft'),
+		'fadeOutLeftBig' => t('fadeOutLeftBig'),
+		'fadeOutRight' => t('fadeOutRight'),
+		'fadeOutRightBig' => t('fadeOutRightBig'),
+		'fadeOutUp' => t('fadeOutUp'),
+		'fadeOutUpBig' => t('fadeOutUpBig'),
+		'flipInX' => t('flipInX'),
+		'flipInY' => t('flipInY'),
+		'flipOutX' => t('flipOutX'),
+		'flipOutY' => t('flipOutY'),
+		'lightSpeedIn' => t('lightSpeedIn'),
+		'lightSpeedOut' => t('lightSpeedOut'),
+		'rotateIn' => t('rotateIn'),
+		'rotateInDownLeft' => t('rotateInDownLeft'),
+		'rotateInDownRight' => t('rotateInDownRight'),
+		'rotateInUpLeft' => t('rotateInUpLeft'),
+		'rotateInUpRight' => t('rotateInUpRight'),
+		'rotateOut' => t('rotateOut'),
+		'rotateOutDownLeft' => t('rotateOutDownLeft'),
+		'rotateOutDownRight' => t('rotateOutDownRight'),
+		'rotateOutUpLeft' => t('rotateOutUpLeft'),
+		'rotateOutUpRight' => t('rotateOutUpRight'),
+		'hinge' => t('hinge'),
+		'rollIn' => t('rollIn'),
+		'rollOut' => t('rollOut'),
+		'zoomIn' => t('zoomIn'),
+		'zoomInDown' => t('zoomInDown'),
+		'zoomInLeft' => t('zoomInLeft'),
+		'zoomInRight' => t('zoomInRight'),
+		'zoomInUp' => t('zoomInUp'),
+		'zoomOut' => t('zoomOut'),
+		'zoomOutDown' => t('zoomOutDown'),
+		'zoomOutLeft' => t('zoomOutLeft'),
+		'zoomOutRight' => t('zoomOutRight'),
+		'zoomOutUp' => t('zoomOutUp'),
+		'slideInDown' => t('slideInDown'),
+		'slideInLeft' => t('slideInLeft'),
+		'slideInRight' => t('slideInRight'),
+		'slideInUp' => t('slideInUp'),
+		'slideOutDown' => t('slideOutDown'),
+		'slideOutLeft' => t('slideOutLeft'),
+		'slideOutRight' => t('slideOutRight'),
+		'slideOutUp' => t('slideOutUp'),
+	);
+	
+	return $effects;
+}

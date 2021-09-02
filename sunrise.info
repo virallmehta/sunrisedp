@@ -1,0 +1,74 @@
+name = Sunrise
+description = <a href="http://www.sunrisesoftlab.com">Sunrise Softlab</a> Site Template support HTML5 markups & CSS3
+core = 7.x
+version = "2.00"
+engine = phptemplate
+screenshot = screenshot.png
+
+stylesheets[all][] = vendor/normalize.min.css
+stylesheets[all][] = vendor/font-awesome/css/font-awesome.min.css
+stylesheets[all][] = vendor/fonts/fontface-style.css
+stylesheets[all][] = vendor/bootstrap/css/bootstrap.min.css
+;stylesheets[all][] = vendor/bootstrap/css/bootstrap-responsive.css
+
+stylesheets[all][] = assets/css/sunrise.css
+scripts[] = vendor/bootstrap/js/bootstrap.min.js
+scripts[] = assets/js/waypoints.min.js
+scripts[] = assets/js/jquery.equalheights.js
+scripts[] = assets/js/plist.js
+scripts[] = assets/js/sunrise.js
+
+regions[header] = Header
+regions[navigation] = Navigation
+regions[search_box] = Search Box
+regions[main_slider] = Main Slider
+regions[page_banner] = Page Banner
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[sidebar_first] = First sidebar
+regions[sidebar_second] = Second sidebar
+regions[footer] = Footer
+
+regions[header_top_left] = Header: Top Left
+regions[header_top_right] = Header: Top Right
+regions[main_top] = Main: Top
+regions[main_upper] = Main: Upper
+regions[content_top] = Content: Top
+regions[content_upper] = Content: Upper
+regions[content] = Content: Body
+regions[content_row2] = Content: 2-column flow
+regions[content_col2-1] = Content: 2-column stacked (1)
+regions[content_col2-2] = Content: 2-column stacked (2)
+regions[content_row3] = Content: 3-column flow
+regions[content_col3-1] = Content: 3-column stacked (1)
+regions[content_col3-2] = Content: 3-column stacked (2)
+regions[content_col3-3] = Content: 3-column stacked (3)
+regions[content_row4] = Content: 4-column flow
+regions[content_col4-1] = Content: 4-column stacked (1)
+regions[content_col4-2] = Content: 4-column stacked (2)
+regions[content_col4-3] = Content: 4-column stacked (3)
+regions[content_col4-4] = Content: 4-column stacked (4)
+regions[content_lower] = Content: Lower
+regions[content_bottom] = Content: Bottom
+regions[main_lower] = Main: Lower
+regions[main_bottom] = Main: Bottom
+
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = search
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+; Custom Background Colors
+settings[link_color] = 529228 
+settings[footer_link_color] = 54773C
+settings[bg_scheme] = stripe_default.png
+settings[custom_bg_attribute] = ''
+settings[theme_color_scheme] = 529228
+
+; Information added by drupal.org packaging script on 
+project = "sunrise"

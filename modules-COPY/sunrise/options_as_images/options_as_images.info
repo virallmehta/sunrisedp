@@ -1,0 +1,4 @@
+name = Sunrise Commerce Options as images
+description = Commerce Displays products variations images instead of a select box.
+core = 7.x
+package = Sunrise

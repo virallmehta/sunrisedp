@@ -1,0 +1,10 @@
+name = Sunrise Views BXSlider
+description = "Show views content as BXSlider format."
+core = 7.x
+package = Sunrise
+
+dependencies[] = libraries
+dependencies[] = views
+
+files[] = sunrise_views_bxslider.theme.inc
+files[] = sunrise_views_bxslider_plugin_style_bxslider.inc

@@ -1,0 +1,6 @@
+name = Sunrise Currency Symbol
+description = Remove Currency Symbol
+core = 7.x
+package = Commerce (contrib)
+dependencies[] = commerce_checkout
+configure = admin/commerce/config/fedex-postal-code-filter

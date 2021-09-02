@@ -1,0 +1,105 @@
+<div class="col-md-2 col-xs-4">
+	<div class="panel panel-default">
+		<div class="panel-heading">Our Services</div>
+			<div class="panel-body">
+				<ul class="typeList">
+					<li><a href="#Packages">Packages</a></li>
+					<li><a href="#Facials">Facials</a></li>
+					<li><a href="#Waxing">Waxing</a></li>
+					<li><a href="#Bleaching">Bleaching</a></li>
+					<li><a href="#Threading">Threading</a></li>
+					<li><a href="#Manicure">Manicure</a></li>
+					<li><a href="#Pedicure">Pedicure</a></li>
+					<li><a href="#Massage">Massage</a></li>
+					<li><a href="#Hair">Hair</a></li>
+					<li><a href="#Make-up">Make up</a></li>
+					<li><a href="#Bridal">Bridal</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div<
+<div class="col-md-4 col-xs-8">
+	<div class="panel panel-default">
+		<div class="panel-heading">Select One Or More Service</div>
+			<div class="panel-body">
+				<ul id="styleList1" class="styleList">
+				</ul>
+			</div>
+		</div>
+	</div>
+<div>
+<div class="col-md-6 col-xs-12 bookappointment">
+	<div class="panel panel-default">
+		<div class="panel-heading">Your Selected Services</div>
+			<div class="panel-body">
+				<div id="viewserv" class="viewServiceContainer">
+					<p>PERSONAL DETAILS</p>
+					<div id="form-messages"></div>
+						<form class="form-horizontal" action="process.php" method="post" id="booknow">
+							<div class="form-group">
+								<ul class="viewservice"></ul>
+							</div>
+							<div class="form-group">
+								<label for="txtfname" class="sr-only">First Name</label>
+								<div class="col-md-12">
+								<input type="text" placeholder="First Name" name="txtfname" id="txtfname" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="txtlname" class="sr-only">Last Name</label>
+								<div class="col-md-12">
+								<input type="text" placeholder="Last Name" name="txtlname" id="txtlname" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="txtemail" class="sr-only">Email</label>
+							<div class="col-md-12">
+								<input type="text" placeholder="Email" name="txtemail" id="txtemail" class="form-control">
+							</div>
+							</div>
+							<div class="form-group">
+							    <label for="txtmobile" class="sr-only">Mobile</label>
+								<div class="col-md-12">
+							   		<input type="text" placeholder="Mobile Number" name="txtmobile" id="txtmobile" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="txtaddress1" class="sr-only">Address Line 1</label>
+								<div class="col-md-12">
+								   	<input type="text" placeholder="Flat No, Building Name" name="txtaddress1" id="txtaddress1" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="txtaddres2" class="sr-only">Street Address</label>
+								<div class="col-md-12">
+									<input type="text" placeholder="Street Address" name="txtaddress2" id="txtaddress2" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="txtpin" class="sr-only">Pin Code</label>
+								<div class="col-md-12">
+									<input type="text" placeholder="Pin Code" name="txtpin" id="txtpin" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="txtdate" class="sr-only">Date</label>
+								<div class="col-md-12">
+									<input type="text" placeholder="DD/MM/YYYY" name="txtdate" id="txtdate" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="txttime" class="sr-only">Time</label>
+								<div class="col-md-12">
+									<select class="form-control" name="txttime" id="txttime">
+										<option value="10:00 AM">10:00 AM</option><option value="10:30 AM">10:30 AM</option><option value="11:00 AM">11:00 AM</option><option value="11:30 AM">11:30 AM</option><option value="12:00 PM">12:00 PM</option><option value="12:30 PM">12:30 PM</option><option value="01:00 PM">01:00 PM</option><option value="01:30 PM">01:30 PM</option><option value="02:00 PM">02:00 PM</option><option value="02:30 PM">02:30 PM</option><option value="03:00 PM">03:00 PM</option><option value="03:30 PM">03:30 PM</option><option value="04:00 PM">04:00 PM</option><option value="05:00 PM">05:00 PM</option><option value="05:30 PM">05:30 PM</option><option value="06:00 PM">06:00 PM</option><option value="06:30 PM">06:30 PM</option><option value="07:00 PM">07:00 PM</option></select>
+								</div>
+							</div>
+							<p><button class="btn btn-default" type="submit">Book Now</button><br></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

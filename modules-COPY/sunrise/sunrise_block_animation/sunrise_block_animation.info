@@ -1,0 +1,12 @@
+name = Sunrise Block Animation as images
+description = Block Animation.
+core = 7.x
+
+; Stylesheets
+stylesheets[all][] = animate.min.css
+
+; Scripts
+scripts[] = jquery.appear.js
+;scripts[] = jquery.stellar.min.js
+
+package = Sunrise

@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements commerce_currency_info_alter().
+ */
+function currency_symbol_commerce_currency_info_alter(&$currencies, $langcod) {
+  //drupal_set_message(var_dump($currencies['INR']),'warning');	
+  $currencies['INR']['code_placement'] = 'hidden';
+  $currencies['INR']['symbol_placement'] = 'before'; // after, or 'before'.
+  $currencies['INR']['symbol']= '';
+}
+
